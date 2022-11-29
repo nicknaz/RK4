@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10.0" maxHeight="-Infinity" prefHeight="800.0" prefWidth="1280.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1280.0">
+         <children>
+            <Button fx:id="startButton" layoutX="104.0" layoutY="379.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="154.0" text="Button" />
+            <Text fx:id="resultText1" layoutX="14.0" layoutY="789.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" wrappingWidth="154.39999999999992" />
+            <TextField fx:id="expressionField1" layoutX="107.0" layoutY="15.0" text="(c * x + k * y + K * y * y * y)/(-m)" />
+            <LineChart fx:id="graph" layoutX="595.0" layoutY="16.0" prefHeight="268.0" prefWidth="319.0" title="u(t)">
+              <xAxis>
+                <NumberAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Text fx:id="resultText11" layoutX="36.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x' =" wrappingWidth="26.40000762939445" />
+            <TextField fx:id="expressionField2" layoutX="107.0" layoutY="42.0" text="x" />
+            <Text fx:id="resultText111" layoutX="36.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y' =" wrappingWidth="26.40000762939445" />
+            <TextField fx:id="hField" layoutX="107.0" layoutY="68.0" text="0.01" />
+            <Text fx:id="h" layoutX="36.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h = " wrappingWidth="26.40000762939445" />
+            <TextField layoutX="107.0" layoutY="95.0" text="0" fx:id="x0Field" />
+            <Text layoutX="36.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x0 =" wrappingWidth="42.40000953674314" fx:id="x0" />
+            <TextField fx:id="tMaxField" layoutX="107.0" layoutY="273.0" prefHeight="26.0" prefWidth="149.0" text="2" />
+            <Text layoutX="36.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tMаx =" wrappingWidth="42.4000095367432" fx:id="xMax" />
+            <TextField fx:id="y0Field" layoutX="107.0" layoutY="121.0" text="10" />
+            <Text layoutX="36.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y0 =" wrappingWidth="42.40000953674314" fx:id="x01" />
+            <TextField fx:id="t0Field" layoutX="107.0" layoutY="147.0" text="0" />
+            <Text layoutX="36.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="t0 =" wrappingWidth="42.40000953674314" fx:id="x011" />
+            <TextField fx:id="EgrField" layoutX="107.0" layoutY="300.0" prefHeight="26.0" prefWidth="149.0" text="0.0001" />
+            <Text layoutX="36.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eгр =" wrappingWidth="42.4000095367432" fx:id="xMax1" />
+            <TextField fx:id="nMaxField" layoutX="107.0" layoutY="326.0" prefHeight="26.0" prefWidth="149.0" text="10000" />
+            <Text layoutX="36.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nmax = " wrappingWidth="48.80000343322757" fx:id="xMax11" />
+            <TextField fx:id="lokPogrField" layoutX="107.0" layoutY="353.0" prefHeight="26.0" prefWidth="149.0" text="0.001" />
+            <Text layoutX="36.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Лок. погр. = " wrappingWidth="75.20002784729007" fx:id="xMax111" />
+            <LineChart fx:id="graph1" layoutX="265.0" layoutY="16.0" prefHeight="268.0" prefWidth="330.0" title="u'(t)">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="graph2" layoutX="914.0" layoutY="15.0" prefHeight="268.0" prefWidth="330.0" title="u'(u)">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <CheckBox fx:id="isControl" layoutX="17.0" layoutY="358.0" mnemonicParsing="false" />
+            <TableView fx:id="table" layoutX="290.0" layoutY="311.0" prefHeight="447.0" prefWidth="968.0">
+              <columns>
+                <TableColumn fx:id="nCol" prefWidth="29.600006103515625" text="n" />
+                <TableColumn fx:id="tCol" prefWidth="59.20001220703125" text="Tn" />
+                  <TableColumn fx:id="yCol" prefWidth="59.20001220703125" text="Yn" />
+                  <TableColumn fx:id="y2Col" prefWidth="59.20001220703125" text="Y2n" />
+                  <TableColumn fx:id="y2_yCol" prefWidth="59.20001220703125" text="Y2n-Yn" />
+                  <TableColumn prefWidth="59.20001220703125" text="Xn" fx:id="xCol" />
+                  <TableColumn prefWidth="59.20001220703125" text="X2n" fx:id="x2Col" />
+                  <TableColumn prefWidth="59.20001220703125" text="X2n-Xn" fx:id="x2_xCol" />
+                  <TableColumn fx:id="olpCol" prefWidth="59.20001220703125" text="ОЛП" />
+                  <TableColumn fx:id="hCol" prefWidth="59.20001220703125" text="h" />
+                  <TableColumn fx:id="divCol" prefWidth="59.20001220703125" text="деления" />
+                  <TableColumn fx:id="multCol" prefWidth="59.20001220703125" text="умножения" />
+              </columns>
+            </TableView>
+            <TextField fx:id="cField" layoutX="107.0" layoutY="172.0" text="0.15" />
+            <Text layoutX="36.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="с =" wrappingWidth="42.40000953674314" fx:id="x0111" />
+            <TextField fx:id="kField" layoutX="107.0" layoutY="197.0" text="2" />
+            <Text layoutX="36.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k =" wrappingWidth="42.40000953674314" fx:id="x0112" />
+            <TextField fx:id="KField" layoutX="107.0" layoutY="222.0" text="2.0" />
+            <Text layoutX="36.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K =" wrappingWidth="42.40000953674314" fx:id="x0113" />
+            <TextField fx:id="mField" layoutX="107.0" layoutY="247.0" text="1" />
+            <Text layoutX="36.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="m =" wrappingWidth="42.40000953674314" fx:id="x01131" />
+            <Text layoutX="112.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Справка" />
+            <Text layoutX="25.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Метод Рунге-Кутта явный 4 порядка p = 4" />
+            <Text fx:id="text1" layoutX="25.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начальное отклонение груза: " />
+            <Text fx:id="text2" layoutX="25.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начальная скорость груза: " />
+            <Text fx:id="text3" layoutX="25.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начальное время счета: " />
+            <Text fx:id="text4" layoutX="26.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Условие остановки счета:" />
+            <Text fx:id="text5" layoutX="26.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="контроль" />
+            <Text fx:id="text6" layoutX="26.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eps граничный:" />
+            <Text fx:id="text7" layoutX="26.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Число шагов:" />
+            <Text fx:id="text8" layoutX="26.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Масса груза: " />
+            <Text fx:id="text9" layoutX="26.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Коэффициент демпфирования: " />
+            <Text fx:id="text10" layoutX="26.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Жесткость пружины: " />
+            <Text fx:id="text11" layoutX="26.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Нелинейная хар-ка k*: " />
+            <Text fx:id="text12" layoutX="26.0" layoutY="702.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Максимальная ОЛП:" />
+            <Text fx:id="text13" layoutX="27.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Число удвоения шага:" />
+            <Text fx:id="text14" layoutX="27.0" layoutY="736.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Число деления шага:" />
+            <Text fx:id="text15" layoutX="28.0" layoutY="753.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Максимальный h:" />
+            <Text fx:id="text16" layoutX="28.0" layoutY="769.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Минимальный h:" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
